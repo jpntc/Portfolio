@@ -37,13 +37,16 @@ const EmailSection = () => {
   };
 
   return (
-    <section id="contact" className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 ">
+    <section
+      id="contact"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 "
+    >
       <div>
         <h5 className="text-xl font-bold text-secondary-200 my-2">
           {" "}
           Connect with me
         </h5>
-        <p className="text-[#ADB7B3] mb-4 max-w-md">
+        <p className="text-primary mb-4 max-w-md">
           I am currently seeking an internship or full-time opportunity to
           leverage what I have learn't and develop in an industry environment. I
           already have knowledge of software development methods and I am
@@ -88,14 +91,14 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              className="text-secondary-200 bg-[#425ad4] border border-[#33353F] placeholder-[#9CA2A9] text-grey-100 text-sm rounded-lg block w-full p-2.5"
+              className=" bg-[#4e6cff] border border-[#33353F] placeholder-primary text-primary text-sm rounded-lg block w-full p-2.5"
               placeholder="johnsmith22@google.com"
             />
           </div>
           <div className="mb-6">
             <label
               htmlFor="Subject"
-              className="text-secondary-200 block mb-2 text-sm font-medium"
+              className=" text-primary block mb-2 text-sm font-medium"
             >
               Subject
             </label>
@@ -104,7 +107,7 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              className="text-white bg-[#425ad4] border border-[#33353F] placeholder-[#9CA2A9] text-grey-100 text-sm rounded-lg block w-full p-2.5"
+              className=" bg-[#4e6cff] border border-[#030304] placeholder-primary text-primary text-sm rounded-lg block w-full p-2.5"
               placeholder="Saying hello"
             />
           </div>
@@ -119,13 +122,13 @@ const EmailSection = () => {
               name="message"
               id="message"
               type="text"
-              className="text-white bg-[#425ad4] border border-[#33353F] placeholder-[#9CA2A9] text-grey-100 text-sm rounded-lg block w-full p-2.5"
+              className=" bg-[#4e6cff] border border-[#09090a] placeholder-primary text-primary text-sm rounded-lg block w-full p-2.5"
               placeholder="Chat about..."
             ></textarea>
           </div>
           <button
             type="submit"
-            className="text-slate-600  px-6 py-3 hover:bg-slate-600 rounded-full mt-3 w-full sm:w-fit bg-gradient-to-br  from-primary-100 via-secondary-300 to-primary-100 "
+            className="text-white  px-6 py-3 hover:bg-white hover:text-black rounded-full mt-3 w-full sm:w-fit bg-slate-400 "
           >
             Send
           </button>

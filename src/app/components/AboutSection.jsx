@@ -43,7 +43,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="text-white borde">
+    <section id="about" className="text-primary">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -68,7 +68,7 @@ const AboutSection = () => {
             to working on new projects outside my expertise because of learning
             opportunities.
           </p>
-          <div className="flex flex-row mt-8 justify-start">
+          <div className="flex flex-row mt-8 justify-start text-primary">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}

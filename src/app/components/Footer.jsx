@@ -2,8 +2,8 @@ import React from 'react'
 import Image from "next/image"
 const Footer = () => {
   return (
-    <footer className="footer border border-t-[#33353F]">
-        <div className="md:text-xl text-white flex justify-center " >
+    <footer className="footer border-t border-slate-400">
+        <div className="md:text-xl text-black flex justify-center " >
             <span className="container p-12 flex  justify-evenly items-center w-96 ">
                     <Image src="/images/logo2.jpg" 
                     alt="hero image ab" 
