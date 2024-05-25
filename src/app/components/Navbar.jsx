@@ -1,10 +1,10 @@
-"use client"
-import React, {useState} from 'react'
-import NavLink from "../components/NavLink"
-import Link from "next/link"
-import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid"
-import MenuOverlay from './MenuOverlay'
-import Image from 'next/image'
+"use client";
+import React, { useState } from "react";
+import NavLink from "../components/NavLink";
+import Link from "next/link";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -14,29 +14,33 @@ const navLinks = [
   {
     title: "Projects",
     path: "#projects",
-  },{
+  },
+  {
     title: "Contact",
     path: "#contact",
-  }
-]
+  },
+];
+
+
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#cbd5e1] bg-opacity-100 border-b border-slate-400">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 sm:p-0 container lg:py-4 ">
-        <Link href={"/"}>
-          <Image
-            src="/images/logo2.jpg"
-            alt="NT Enhanced"
-            quality={100}
-            width={130}
-            height={130}
-            layout="intrinsic"
-            className={"rounded-full"}
-            
-          />
-        </Link>
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-200 bg-opacity-100 border-b border-slate-400">
+      <div className="flex flex-wrap items-center justify-between mx-auto px-4  container  py-1 ">
+        <div className=" w-20  md:w-28 lg:w-32">
+          <Link href={"/"}>
+            <Image
+              src="/images/logo2.jpg"
+              alt="NT Enhanced"
+              quality={100}
+              width={130}
+              height={130}
+              layout="intrinsic"
+              className={"rounded-full"}
+            />
+          </Link>
+        </div>
 
         <div className="mobile-menu block md:hidden">
           <button
@@ -57,7 +61,9 @@ const Navbar = () => {
                 {/* <NavLink href={link.path}title={link.title} style={{color: 'green'}}></NavLink> */}
                 <a
                   href={link.path}
-                  className={" md:text-3xl text-black hover:text-white visited:text-blue"}
+                  className={
+                    " md:text-3xl text-black hover:text-white visited:text-blue"
+                  }
                 >
                   {link.title}
                 </a>
@@ -69,6 +75,7 @@ const Navbar = () => {
       {navbarOpen ? <MenuOverlay links={navLinks} /> : <div></div>}
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
+

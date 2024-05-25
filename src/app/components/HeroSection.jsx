@@ -14,13 +14,13 @@ const HeroSection = () => {
         className="grid grid-cols-1 sm:grid-cols-12 "
       >
         <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start mt-3 mb-3">
-          <h1 className=" mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300  to-cyan-200">
+          <h1 className=" mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500  to-emerald-500">
               Hello, I'm{" "}
             </span>
             <br />
             <TypeAnimation
-              className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-cyan-200"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-indigo-500"
               sequence={[
                 "Jude Pierre",
                 1500,
@@ -39,7 +39,7 @@ const HeroSection = () => {
           <p className="text-primary text-base sm:text-lg lg:text-xl mb-6">
             {/* I am someone who loves programming. I want to learn as much as I can about computers, software,
                     and all the things related to my field. This is because I see software in everything I interract with.*/}
-            I am currently seeking new grad opportunities to commence my career! I have knowledge of many of the different software engineering methodologies and I am a team player.
+            Currently seeking opportunities to learn skills, work with professionals, and dive into the software engineering industry. Knowledge of many of the different software engineering methodologies including Agile & Spiral development processes. I am a team player and value constructive criticism.
           </p>
           <div>
             {/* <button className="text-slate-600 bg-gradient px-6 py-3 hover:bg-slate-600 rounded-full mt-3 w-full sm:w-fit  bg-gradient-to-br  from-primary-100 via-secondary-300 to-primary-100 ">
