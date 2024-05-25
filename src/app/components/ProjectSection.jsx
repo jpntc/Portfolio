@@ -8,23 +8,25 @@ const projectsData = [
     title: "Image Generator",
     description:
       "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind. ",
-    image: "/images/projects/2.png",
+    image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "",
     tag: ["All", "Web"],
   },
   {
     id: 2,
     title: "Game Hub",
-    description: "A game browsing web app that uses RAWG's API and filters that gives power to browse hundreds of games.",
-    image: "/images/projects/2.png",
+    description:
+      "A game browsing web app that uses RAWG's API and filters that gives power to browse hundreds of games.",
+    image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Game-Hub",
     tag: ["All", "Web"],
   },
   {
     id: 3,
     title: "Task Manager",
-    description: "A task-manager web app that offers the ability to create, cross-off, and delete tasks, it also saves them to the user's pc local storage with prisma db.",
-    image: "/images/projects/2.png",
+    description:
+      "A task-manager web app that offers the ability to create, cross-off, and delete tasks, it also saves them to the user's pc local storage with prisma db.",
+    image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Task-Manager",
     tag: ["All", "Web"],
   },
@@ -45,31 +47,34 @@ const ProjectSection = () => {
     },
   };
   return (
-    <section ref={ref} id="projects">
-      <h2 className="text-center text-4xl font-bold text-secondary-200 mt-8 mb-8 ">
-        Projects
-      </h2>
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-6">
-        {projectsData.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              tags={project}
-              gitUrl={project.gitUrl}
-            ></ProjectCard>
-          </motion.li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <div id="projects" className="block xl:mb-72"></div>
+      <section ref={ref} id="projects" className="">
+        <h2 className="text-center text-4xl font-bold text-secondary-200 mt-8 mb-8 ">
+          Projects
+        </h2>
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+          {projectsData.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                tags={project}
+                gitUrl={project.gitUrl}
+              ></ProjectCard>
+            </motion.li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 };
 

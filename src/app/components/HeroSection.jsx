@@ -3,10 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-
+import HeroAnimation from "./HeroAnimation";
 const HeroSection = () => {
   return (
-    <section className="lg:py-20 md:py" >
+    <>
+    <section className="lg:py-20 md:py">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,7 +40,7 @@ const HeroSection = () => {
           <p className="text-primary text-base sm:text-lg lg:text-xl mb-6">
             {/* I am someone who loves programming. I want to learn as much as I can about computers, software,
                     and all the things related to my field. This is because I see software in everything I interract with.*/}
-            Currently seeking opportunities to learn skills, work with professionals, and dive into the software engineering industry. Knowledge of many of the different software engineering methodologies including Agile & Spiral development processes. I am a team player and value constructive criticism.
+
           </p>
           <div>
             {/* <button className="text-slate-600 bg-gradient px-6 py-3 hover:bg-slate-600 rounded-full mt-3 w-full sm:w-fit  bg-gradient-to-br  from-primary-100 via-secondary-300 to-primary-100 ">
@@ -61,6 +62,8 @@ const HeroSection = () => {
         </div>
       </motion.div>
     </section>
+    <HeroAnimation />
+    </>
   );
 };
 
