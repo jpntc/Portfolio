@@ -77,7 +77,7 @@ const EmailSection = () => {
                 alt="github-logo"
                 quality={100}
                 width={100}
-                height={10}
+                height={100}
                 layout="intrinsic"
                 className={""}
               />
