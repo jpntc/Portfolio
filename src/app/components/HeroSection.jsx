@@ -32,7 +32,7 @@ const HeroSection = () => {
                   1500,
                 ]}
                 wrapper="span"
-                speed={40}
+                speed={20}
                 repeat={Infinity}
               />
             </h1>

@@ -34,7 +34,7 @@ const projectsData = [
 
 const ProjectSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   const cardVariants = {
     initial: {
@@ -53,14 +53,14 @@ const ProjectSection = () => {
         <h2 className="text-center text-4xl font-bold text-secondary-200 mt-8 mb-8 ">
           Projects
         </h2>
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
           {projectsData.map((project, index) => (
             <motion.li
               key={index}
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.3, delay: index * 0.4 }}
+              transition={{ duration: 0.8, delay: index * 0.4 }}
             >
               <ProjectCard
                 key={project.id}
@@ -72,7 +72,7 @@ const ProjectSection = () => {
               ></ProjectCard>
             </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </section>
     </>
   );
