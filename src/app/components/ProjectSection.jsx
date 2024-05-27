@@ -2,6 +2,7 @@
 import ProjectCard from "./ProjectCard";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import ProjectPopup from "./ProjectPopUp";
 const projectsData = [
   {
     id: 1,
@@ -36,6 +37,16 @@ const ProjectSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openPopup = (projectIndex)=>{
+    setSelectedProject(projectIndex);
+  }
+
+  const closePopup = () => {
+    setSelectedProject(null);
+  };
+
   const cardVariants = {
     initial: {
       y: 50,
@@ -48,7 +59,6 @@ const ProjectSection = () => {
   };
   return (
     <>
-      <div id="projects" className="block xl:mb-72"></div>
       <section ref={ref} id="projects" className="">
         <h2 className="text-center text-4xl font-bold text-secondary-200 mt-8 mb-8 ">
           Projects
@@ -60,7 +70,8 @@ const ProjectSection = () => {
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.8, delay: index * 0.4 }}
+              transition={{ duration: 0.8, delay: index * 0.5 }}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 cursor-pointer"
             >
               <ProjectCard
                 key={project.id}
@@ -69,11 +80,14 @@ const ProjectSection = () => {
                 imgUrl={project.image}
                 tags={project}
                 gitUrl={project.gitUrl}
+                onClick={()=>openPopup(index)}
               ></ProjectCard>
             </motion.li>
           ))}
         </motion.ul>
       </section>
+
+      
     </>
   );
 };

@@ -14,7 +14,7 @@ export default function Home() {
       <div class="container mt-24 mx-auto px-12 py-4">
         <HeroSection />
       </div>
-      <div className="bg-slate-300">
+      <div className="bg-slate-300 ">
       <HeroAnimation />
       </div>
       <div class="container mt-24 mx-auto px-12 py-4">

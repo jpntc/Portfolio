@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <>
-      <section className="lg:py-20 md:py">
+      <section className="py-8 md:py-14 ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -14,13 +14,13 @@ const HeroSection = () => {
           className="grid grid-cols-1 sm:grid-cols-12 "
         >
           <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start mt-3 mb-3">
-            <h1 className=" mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
+            <h1 className=" mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold md:text-nowrap">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500  to-emerald-500">
                 Hello, I&apos;m{" "}
               </span>
               <br />
               <TypeAnimation
-                className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-indigo-500"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-indigo-500  "
                 sequence={[
                   "Jude Pierre",
                   1500,
@@ -28,11 +28,11 @@ const HeroSection = () => {
                   1500,
                   "a Builder",
                   1500,
-                  "a Full-Stack Dev",
+                  "a Software Engineer",
                   1500,
                 ]}
                 wrapper="span"
-                speed={20}
+                speed={80}
                 repeat={Infinity}
               />
             </h1>
@@ -59,7 +59,6 @@ const HeroSection = () => {
             </div>
           </div>
         </motion.div>
-  
       </section>
     </>
   );

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLink from "../components/NavLink";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -21,9 +21,38 @@ const navLinks = [
   },
 ];
 
-
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      const targetId = event.target.getAttribute("href")?.slice(1);
+      if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const yOffset = -180; 
+          const y =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+          event.preventDefault();
+        }
+      }
+    };
+
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => {
+      link.addEventListener("click", handleScroll);
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", handleScroll);
+      });
+    };
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-200 bg-opacity-100 border-b border-slate-400">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4  container  py-1 ">
@@ -57,12 +86,9 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 flex-row md:flex-row md:space-x-8 mt-0  ">
             {navLinks.map((link, index) => (
               <li key={index}>
-                {/* <NavLink href={link.path}title={link.title} style={{color: 'green'}}></NavLink> */}
                 <a
                   href={link.path}
-                  className={
-                    " md:text-3xl text-black hover:text-white visited:text-blue"
-                  }
+                  className="md:text-3xl text-black hover:text-white visited:text-blue"
                 >
                   {link.title}
                 </a>
@@ -77,4 +103,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

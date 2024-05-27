@@ -13,10 +13,7 @@ const Footer = () => {
             className="rounded-full overflow-hidden bg-transparent"
           />
           <p>All rights reserved.</p>
-          
         </span>
-          <p className='text-center'>Thank you for visiting</p>
-        
       </div>
     
     </footer>

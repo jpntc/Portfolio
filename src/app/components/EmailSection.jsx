@@ -38,7 +38,6 @@ const EmailSection = () => {
 
   return (
     <>
-      <div id="contact" className="xl:mb-20"></div>
       <section
         id="contact"
         className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 "
@@ -56,8 +55,8 @@ const EmailSection = () => {
             Currently seeking opportunities to learn skills, work with
             professionals, and dive into the software engineering industry.
             Knowledge of many of the different software engineering
-            methodologies including Agile & Spiral development processes. Soft skills include teamwork 
-            and constructive criticism evaluation.
+            methodologies including Agile & Spiral development processes. Soft
+            skills include teamwork and constructive criticism evaluation.
           </p>
           <div className="socials flex flex-row gap-20 ">
             <Link href="https://github.com/jpntc">
