@@ -4,22 +4,26 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import ProjectPopup from "./ProjectPopup";
 
+
 const projectsData = [
   {
     id: 1,
     title: "Image Generator",
     description:
       "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind.",
+    detailedDescription:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore.",
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "",
     tag: ["All", "Web"],
-    demo: "https://www.youtube.com/watch?v=zyoBA0aCRNk",
+    demo: "https://www.youtube.com/embed/vI8e0woBw1s?si=NmFN0KgJ_OcjA6Zc",
   },
   {
     id: 2,
     title: "Game Hub",
     description:
       "A game browsing web app that uses RAWG's API and filters that gives power to browse hundreds of games.",
+    detailedDescription: "Detailed description here",
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Game-Hub",
     tag: ["All", "Web"],
@@ -30,6 +34,7 @@ const projectsData = [
     title: "Task Manager",
     description:
       "A task-manager web app that offers the ability to create, cross-off, and delete tasks, it also saves them to the user's pc local storage with prisma db.",
+    detailedDescription: "Detailed description here",
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Task-Manager",
     tag: ["All", "Web"],
