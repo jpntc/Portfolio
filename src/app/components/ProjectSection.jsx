@@ -2,7 +2,7 @@
 import ProjectCard from "./ProjectCard";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ProjectPopup from "./ProjectPopUp";
+
 const projectsData = [
   {
     id: 1,
@@ -71,22 +71,19 @@ const ProjectSection = () => {
               initial="initial"
               animate={isInView ? "animate" : "initial"}
               transition={{ duration: 0.8, delay: index * 0.5 }}
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 cursor-pointer"
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
             >
               <ProjectCard
-                key={project.id}
                 title={project.title}
                 description={project.description}
                 imgUrl={project.image}
-                tags={project}
-                gitUrl={project.gitUrl}
-                onClick={()=>openPopup(index)}
+                tags={project.tag}
+                onClick = {()=>openPopup(index)}
               ></ProjectCard>
             </motion.li>
           ))}
         </motion.ul>
       </section>
-
       
     </>
   );

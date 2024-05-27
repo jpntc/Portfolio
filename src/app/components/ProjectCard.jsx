@@ -1,7 +1,7 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon, WindowIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-const ProjectCard = ({ imgUrl, title, description, gitUrl, onClick }) => {
+const ProjectCard = ({ imgUrl, title, description, onClick }) => {
   return (
     <div className="">
       <div
@@ -21,11 +21,9 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, onClick }) => {
         <h5 className="tex-xl font-semibold mb-2 ">{title}</h5>
         <p className="text-white h-40 inline-block">{description}</p>
       </div>
-
     </div>
   );
 };
-
 export default ProjectCard;
 
 

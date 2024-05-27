@@ -67,6 +67,7 @@ const AboutSection = () => {
             alt="software engineering image"
             width={600}
             height={600}
+            priority={false}
           />
           <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
             <h2 className="text-4xl font-bold text-secondary-200 mb-4">
