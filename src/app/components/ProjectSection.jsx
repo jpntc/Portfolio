@@ -13,6 +13,7 @@ const projectsData = [
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "",
     tag: ["All", "Web"],
+    demo: "https://www.youtube.com/watch?v=zyoBA0aCRNk",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const projectsData = [
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Game-Hub",
     tag: ["All", "Web"],
+    demo: "",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const projectsData = [
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "https://github.com/jpntc/Task-Manager",
     tag: ["All", "Web"],
+    demo: "",
   },
 ];
 

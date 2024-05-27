@@ -13,7 +13,19 @@ const ProjectPopup = ({ project, onClose }) => {
         </button>
         <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
         <p className="mb-4">{project.description}</p>
-        {project.gitUrl && (
+        {project.demo ? (
+          <div className="mb-4">
+            <iframe
+              src={project.demo}
+              allowFullScreen
+              className="w-full h-64 border rounded"
+              title={`${project.title} demo`}
+            />
+          </div>
+        ) : (
+          <p className="mb-4">Demo Coming Soon</p>
+        )}
+        {project.gitUrl ? (
           <a
             href={project.gitUrl}
             target="_blank"
@@ -22,6 +34,8 @@ const ProjectPopup = ({ project, onClose }) => {
           >
             View on GitHub
           </a>
+        ) : (
+          <p>Coming Soon</p>
         )}
       </div>
     </div>
