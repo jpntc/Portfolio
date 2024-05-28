@@ -5,23 +5,29 @@ import AboutSection from "./components/AboutSection"
 import ProjectSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
-import HeroAnimation from "./components/HeroAnimation";
+
+
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-slate-200">
-      <Navbar/>
-      <div className="container mt-24 mx-auto px-12 py-4">
+      <Navbar />
+      <div className="container mt-24 mx-auto px-12 py-4 lg:mt-28 min-h-screen">
         <HeroSection />
       </div>
-      <div className="bg-slate-300 ">
-      <HeroAnimation />
-      </div>
-      <div className="container mt-24 mx-auto px-12 py-4">
+
+      <div className="container mt-24 mx-auto px-12 py-4 min-h-screen">
         <AboutSection />
+      </div>
+
+      <div className="container mt-24 mx-auto px-12 py-4 min-h-screen">
         <ProjectSection />
+      </div>
+
+      <div className="container mt-24 mx-auto px-12 py-4 min-h-screen">
         <EmailSection />
       </div>
+
       <Footer />
     </main>
   );

@@ -6,7 +6,7 @@ const VideoComponent = ({ demo }) => {
       <iframe
         src={demo}
         allowFullScreen
-        className="absolute top-0 left-0 w-full h-full border rounded"
+        className="absolute top-0 left-0 w-full h-full"
         title="Project Demo"
       />
     </div>
@@ -14,3 +14,4 @@ const VideoComponent = ({ demo }) => {
 };
 
 export default VideoComponent;
+

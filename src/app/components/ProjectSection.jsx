@@ -10,13 +10,13 @@ const projectsData = [
     id: 1,
     title: "Image Generator",
     description:
-      "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind.",
+      "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind. ",
     detailedDescription:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore. consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem, hic consequuntur beatae officiis excepturi a nesciunt recusandae suscipit dolorem reprehenderit voluptas, ex labore.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem,",
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "",
     tag: ["All", "Web"],
-    demo: "https://www.youtube.com/embed/vI8e0woBw1s?si=NmFN0KgJ_OcjA6Zc",
+    demo: "https://www.youtube.com/embed/GBKI9VSKdGg?si=4dcDsb4FXMdLKGip",
   },
   {
     id: 2,
