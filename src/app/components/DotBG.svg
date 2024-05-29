@@ -1,0 +1,11 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define the pattern -->
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <!-- Define the dot -->
+      <circle cx="5" cy="5" r="2" fill="black" />
+    </pattern>
+  </defs>
+  <!-- Apply the pattern to a rectangle covering the entire SVG -->
+  <rect width="100%" height="100%" fill="url(#dots)" />
+</svg>

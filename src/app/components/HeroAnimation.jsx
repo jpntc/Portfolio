@@ -9,7 +9,7 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4",
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4",
     alt: "Python logo",
   },
   {
@@ -17,7 +17,7 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4",
+      "flex  w-20 h-20 md:w-28 md:h-28  p-4",
     alt: "JavaScript logo",
   },
   {
@@ -25,7 +25,7 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white  p-6  overflow-hidden ",
+      "flex   w-20 h-20 md:w-28 md:h-28   p-6  overflow-hidden ",
     alt: "TypeScript logo",
   },
   {
@@ -33,7 +33,7 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
     alt: "Java logo",
   },
   {
@@ -41,7 +41,7 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
     alt: "C++ logo",
   },
   {
@@ -49,8 +49,34 @@ const TechOrbs = [
     width: 100,
     height: 100,
     styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
     alt: "C++ logo",
+  },
+
+  {
+    path: "/images/tech-stack-images/figma.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
+    alt: "figma logo",
+  },
+
+  {
+    path: "/images/tech-stack-images/git.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
+    alt: "git logo",
+  },
+  {
+    path: "/images/tech-stack-images/prisma.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex   w-20 h-20 md:w-28 md:h-28  p-4 ",
+    alt: "prisma logo",
   },
 ];
 const TechOrbsVariants = {
@@ -66,16 +92,17 @@ const HeroAnimation = () => {
   const isInView = useInView(ref, { once: true });
   return (
     <>
-      <div className="p-3">
-        <ul className="flex justify-evenly">
+      <div className="p-3 border-red-200">
+        <ul className="  grid grid-cols-4 md:grid-cols-6  gap-4 px-32  ">
           {TechOrbs.map((orb, index) => (
             <motion.li
               key={index}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
+              className=""
             >
               <motion.div
-                className={`${orb.styles} `}
+                className={`${orb.styles}  border-red-200 flex justify-center overlay bg-text-dark bg-opacity-80 `}
                 style={{ WebkitUserSelect: "none" }}
                 initial={"initial"}
                 variants={TechOrbsVariants}

@@ -55,7 +55,7 @@ const HeroSection = () => {
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="col-span-4 place-self-center mt-4 lg:mt-0 border"
+            className="col-span-4 place-self-center mt-4 lg:mt-0 "
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
