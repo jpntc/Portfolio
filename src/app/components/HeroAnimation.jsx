@@ -1,7 +1,7 @@
-"use client";
 import { React, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import "./DottedBG.css";
 
 const TechOrbs = [
   {
@@ -96,6 +96,7 @@ const HeroAnimation = () => {
         <ul className="grid grid-cols-4 md:grid-cols-6 gap-4 ">
           {TechOrbs.map((orb, index) => (
             <motion.li
+            className="orb-container"
               key={index}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
@@ -108,13 +109,14 @@ const HeroAnimation = () => {
                 animate={"animate"}
                 transition={{ duration: 0.3, delay: index * 0.4 }}
               >
-                <Image
-                  src={orb.path}
-                  alt={orb.alt}
-                  width={orb.width}
-                  height={orb.height}
-                  className="pointer-events-none select-none"
-                />
+                {" "}
+                  <Image
+                    src={orb.path}
+                    alt={orb.alt}
+                    width={orb.width}
+                    height={orb.height}
+                    className="pointer-events-none select-none"
+                  />
               </motion.div>
             </motion.li>
           ))}
