@@ -52,6 +52,32 @@ const TechOrbs = [
       "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
     alt: "C++ logo",
   },
+
+  {
+    path: "/images/tech-stack-images/figma.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+    alt: "figma logo",
+  },
+
+  {
+    path: "/images/tech-stack-images/git.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+    alt: "git logo",
+  },
+  {
+    path: "/images/tech-stack-images/prisma.png",
+    width: 100,
+    height: 100,
+    styles:
+      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
+    alt: "prisma logo",
+  },
 ];
 const TechOrbsVariants = {
   initial: {
@@ -67,7 +93,7 @@ const HeroAnimation = () => {
   return (
     <>
       <div className="p-3">
-        <ul className="flex justify-evenly">
+        <ul className="grid grid-cols-4 md:grid-cols-6 gap-4 ">
           {TechOrbs.map((orb, index) => (
             <motion.li
               key={index}
