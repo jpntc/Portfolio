@@ -96,20 +96,19 @@ const HeroAnimation = () => {
         <ul className="grid grid-cols-4 md:grid-cols-6 gap-4 ">
           {TechOrbs.map((orb, index) => (
             <motion.li
-            className="orb-container"
               key={index}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
+              
             >
               <motion.div
-                className={`${orb.styles} `}
                 style={{ WebkitUserSelect: "none" }}
                 initial={"initial"}
                 variants={TechOrbsVariants}
                 animate={"animate"}
                 transition={{ duration: 0.3, delay: index * 0.4 }}
               >
-                {" "}
+                <motion.div className="orb-container" >
+                <motion.div className={`${orb.styles} `}whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}>
                   <Image
                     src={orb.path}
                     alt={orb.alt}
@@ -117,6 +116,9 @@ const HeroAnimation = () => {
                     height={orb.height}
                     className="pointer-events-none select-none"
                   />
+                  </motion.div>
+              </motion.div>
+           
               </motion.div>
             </motion.li>
           ))}
