@@ -11,8 +11,8 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: colors.emerald[200], // Light variant
-          dark: colors.emerald[700], // Dark variant
+          light: colors.teal[200], // Light variant
+          dark: colors.teal[700], // Dark variant
         },
         secondary: {
           light: colors.cyan[200], // Light variant
@@ -20,7 +20,11 @@ module.exports = {
         },
         teritary: {
           light: colors.sky[200],
-          dark: colors.sky[700],
+          dark: colors.sky[400],
+        },
+        quaternary: {
+          light: colors.white,
+          dark: "#37656d",
         },
         accent: {
           light: "#fbcfe8", // Light variant
@@ -29,11 +33,11 @@ module.exports = {
         },
         background: {
           light: colors.slate[200], // Light variant
-          dark: colors.slate[700], // Dark variant
+          dark: colors.slate[400], // Dark variant
         },
         text: {
-          light: colors.gray[400], // Light variant
-          dark: colors.gray[900], // Dark variant
+          light: "#2d464c", // Light variant
+          dark: "#37656d", // Dark variant
         },
       },
     },

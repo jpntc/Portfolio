@@ -50,35 +50,37 @@ const AboutSection = () => {
       <motion.section
         id="about"
         ref={ref}
-        className="text-primary"
+        className="text-text-light flex "
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
         transition={{ duration: 0.8 }}
       >
-    
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.1 }}
-          className="md:grid md:grid-cols-2 gap-8 item-center py-8 px-4 xl:gap-16 sm:py-16 md:px-10 md:mt-20 mb-2"
+          className="md:grid md:grid-cols-2 gap-8 item-center content-center  py-8 px-4 xl:gap-16 sm:py-16 md:px-10 md:mt-20 mb-2"
         >
-          <Image
-            src="/images/about_2.avif"
-            alt="software engineering image"
-            width={600}
-            height={600}
-            priority={false}
-          />
-          <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-            <h2 className="text-4xl font-bold text-secondary-200 mb-4">
+          <div className="">
+            <Image
+              src="/images/about_img2.jpg"
+              alt="software engineering image"
+              className=""
+              width={600}
+              height={600}
+              priority={false}
+            />
+          </div>
+          <div className="mt-4 md:mt-0 text-left flex flex-col  h-full ">
+            <h2 className="text-5xl xl:text-6xl font-bold text-text-dark  mb-4">
               About Me
             </h2>
-            <p className="text-base lg:text-lg ">
+            <p className="text-base md:text-xl xl:text-2xl ">
               A student who is passionate about software engineering, loves
-              problem solving, as well as learning new technologies. Open to
+              problem solving, and learning new technologies. Open to
               working on projects outside expertise.
             </p>
-            <div className="flex flex-row mt-8 justify-start text-primary">
+            <div className="flex flex-row mt-8 justify-start ">
               <TabButton
                 selectTab={() => handleTabChange("skills")}
                 active={tab === "skills"}
@@ -95,7 +97,7 @@ const AboutSection = () => {
                 Certifications{" "}
               </TabButton>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 md:text-xl xl:text-2xl text-text-light">
               {Tab_Data.find((t) => t.id == tab).content}
             </div>
           </div>

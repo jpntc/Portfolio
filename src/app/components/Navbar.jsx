@@ -54,16 +54,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-200 bg-opacity-100 border-b border-slate-400">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4  container  py-1 ">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#78b2b8] bg-opacity-100 border-b border-slate-200">
+      <div className="flex flex-wrap items-center justify-between mx-auto px-4  container  py-2 ">
         <div className=" w-20  md:w-28 lg:w-32">
           <Link href={"/"}>
             <Image
               src="/images/logo2.jpg"
               alt="NT Enhanced"
               quality={100}
-              width={130}
-              height={130}
+              width={100}
+              height={100}
               layout="intrinsic"
               className={"rounded-full"}
             />
@@ -73,7 +73,7 @@ const Navbar = () => {
         <div className="mobile-menu block md:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className=" flex items-center px-3 py-2 border rounded border-primary hover:text-white hover:border-white"
+            className=" flex items-center px-3 py-2 border rounded border-text-dark hover:text-primary-light hover:border-primary-light"
           >
             {navbarOpen ? (
               <XMarkIcon className="h-5 w-5" />
@@ -82,13 +82,13 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        <div className="menu hidden  md:block md:w-auto" id="navbar te">
+        <div className="menu hidden md:font-bold md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 flex-row md:flex-row md:space-x-8 mt-0  ">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <a
                   href={link.path}
-                  className="md:text-3xl text-black hover:text-white visited:text-blue"
+                  className="md:text-4xl text-text-dark hover:text-slate-100"
                 >
                   {link.title}
                 </a>

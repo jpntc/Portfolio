@@ -12,11 +12,11 @@ const projectsData = [
     description:
       "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind. ",
     detailedDescription:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ducimus inventore saepe aspernatur ea voluptates autem,",
+      "Detailed description here",
     image: "/images/projects/demo_coming_soon.avif",
     gitUrl: "",
     tag: ["All", "Web"],
-    demo: "https://www.youtube.com/embed/GBKI9VSKdGg?si=4dcDsb4FXMdLKGip",
+    demo: "",
   },
   {
     id: 2,
@@ -70,7 +70,7 @@ const ProjectSection = () => {
   return (
     <>
       <section ref={ref} id="projects" className="">
-        <h2 className="text-center text-4xl font-bold text-secondary-200 mt-8 mb-8">
+        <h2 className="text-center text-5xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
         <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
@@ -81,8 +81,7 @@ const ProjectSection = () => {
               initial="initial"
               animate={isInView ? "animate" : "initial"}
               transition={{ duration: 0.8, delay: index * 0.5 }}
-              className="cursor-pointer"
-              onClick={() => openPopup(index)}
+
             >
               <ProjectCard
                 key={project.id}
@@ -90,7 +89,9 @@ const ProjectSection = () => {
                 description={project.description}
                 imgUrl={project.image}
                 tags={project.tag}
+                onClick={() => openPopup(index)}
                 gitUrl={project.gitUrl}
+                className="cursor-pointer"
               />
             </motion.li>
           ))}
