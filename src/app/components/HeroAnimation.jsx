@@ -13,13 +13,13 @@ const AnimatedNumbers= dynamic(
 const AchievementsList = [
   {
     metric: "Projects",
-    value: "8"
+    value: "6"
   },{
     metric: "Certificaties",
     value: "2"
   },{
     metric: "Hackathons",
-    value: "2",
+    value: "4",
     wins: ""
   },{
     metric: "LeetCode",
