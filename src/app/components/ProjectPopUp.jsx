@@ -4,7 +4,7 @@ import VideoComponent from "./VideoComponent";
 const ProjectPopup = ({ project, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 ">
-      <div className="bg-white p-8 m-16 rounded-lg  w-3/4 md:w-1/2 relative">
+      <div className="bg-white p-8 m-16 border-green-300 rounded-lg  w-3/4 md:w-1/2 relative">
         <button
           className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
           onClick={onClose}

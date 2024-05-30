@@ -50,32 +50,23 @@ const projectsData = [
     description:
       "An inventory system that offers CRUD operations to simulate a real-world system used by commerce businesses.",
     detailedDescription:
-      "A commandline application project for my software engineering class. The project is developed with Java, and uses OOP design principles. There is a class for instantiating any item objects, so data can be loaded, a storage class that is used to load the system with a data file of items, and a main program which takes in the CRUD requests from the user.",
+      "A command-line project for my software engineering class. The project was developed with Java, and uses OOP design principles. There is a class for instantiating any item objects, so data can be loaded, a storage class that is used to load the system with a data file of items, and a main program which takes in the CRUD requests from the user.",
     image: "/images/projects/demo_coming_soon.png",
     gitUrl:
       "https://github.com/jpntc/CSCI-370-Projects/tree/main/Inventory%20Management%20Simulation",
-    tag: ["All", "CL"],
-    demo: "https://www.youtube.com/embed/5ZhB6Rx9BjI?si=xjbn5U1d9MCDgpK5",
-    styles: { backgroundSize: "cover" },
-  },
-  {
-    id: 5,
-    title: "Web Scraper",
-    description: "",
-    detailedDescription: "",
-    image: "/images/projects/demo_coming_soon.png",
-    gitUrl: "",
     tag: ["All", "CL"],
     demo: "",
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 6,
-    title: "Student Database Mockup",
-    description: "",
-    detailedDescription: "",
+    id: 5,
+    title: "URL Parser",
+    description:
+      "A URL parsing program that takes in URLs that point to different web pages and extracts the information they contain.",
+    detailedDescription:
+      "A command-line project for my software engineering class. The project was created in Java from a UML system diagram. It uses OOP principles such as modularization and abstraction, with 3 classes for handling plain html pages, image URLs, and URLs that point to pdf/docx files. It uses a WebReader class to handle branching and functionality for each type of URL. Finally it uses a WebReaderApplication class which is used to handle flags passed from the command-line. The content extracted from the URLs are stored in a separate folder. The information regarding the content such as file size and type are stored in an output file.",
     image: "/images/projects/demo_coming_soon.png",
-    gitUrl: "",
+    gitUrl: "https://github.com/jpntc/CSCI-370-Projects/tree/main/URL_Parser",
     tag: ["All", "CL"],
     demo: "",
     styles: { backgroundSize: "cover" },
