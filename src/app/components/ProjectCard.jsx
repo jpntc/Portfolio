@@ -1,14 +1,15 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon, WindowIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-const ProjectCard = ({ imgUrl, title, description, onClick }) => {
+import Image from "next/image";
+const ProjectCard = ({ imgUrl, title, description, onClick, styles}) => {
   return (
     <div className="">
       <div
-        className="h-52 md:h-52 relative group overflow-hidden rounded-t-xl "
+        className={`h-52 md:h-52 relative group overflow-hidden rounded-t-xl ${styles}`}
         style={{
           background: `url(${imgUrl})`,
-          backgroundSize: "cover",
+          backgroundSize: `${styles.backgroundSize}`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -20,7 +21,7 @@ const ProjectCard = ({ imgUrl, title, description, onClick }) => {
         </div>
       </div>
       <div className="rounded-b-xl bg-slate-700 py-6 px-4 mb-3 h-40 md:h-56 ">
-        <h5 className="text-slate-100 text-2xl font-bold mb-2 ">{title}</h5>
+        <h5 className="text-slate-100 text-xl xl:text-2xl font-bold mb-2 ">{title}</h5>
         <p className="text-white h-40 inline-block">{description}</p>
       </div>
     </div>
