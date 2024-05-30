@@ -47,12 +47,15 @@ const projectsData = [
   {
     id: 4,
     title: "Inventory Management System",
-    description: "",
-    detailedDescription: "",
+    description:
+      "An inventory system that offers CRUD operations to simulate a real-world system used by commerce businesses.",
+    detailedDescription:
+      "A commandline application project for my software engineering class. The project is developed with Java, and uses OOP design principles. There is a class for instantiating any item objects, so data can be loaded, a storage class that is used to load the system with a data file of items, and a main program which takes in the CRUD requests from the user.",
     image: "/images/projects/demo_coming_soon.png",
-    gitUrl: "",
-    tag: ["All", "Console"],
-    demo: "",
+    gitUrl:
+      "https://github.com/jpntc/CSCI-370-Projects/tree/main/Inventory%20Management%20Simulation",
+    tag: ["All", "CL"],
+    demo: "https://www.youtube.com/embed/5ZhB6Rx9BjI?si=xjbn5U1d9MCDgpK5",
     styles: { backgroundSize: "cover" },
   },
   {
@@ -62,7 +65,7 @@ const projectsData = [
     detailedDescription: "",
     image: "/images/projects/demo_coming_soon.png",
     gitUrl: "",
-    tag: ["All", "Console"],
+    tag: ["All", "CL"],
     demo: "",
     styles: { backgroundSize: "cover" },
   },
@@ -73,7 +76,7 @@ const projectsData = [
     detailedDescription: "",
     image: "/images/projects/demo_coming_soon.png",
     gitUrl: "",
-    tag: ["All", "Console"],
+    tag: ["All", "CL"],
     demo: "",
     styles: { backgroundSize: "cover" },
   },
@@ -81,12 +84,9 @@ const projectsData = [
 
 const ProjectSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false});
+  const isInView = useInView(ref, { once: false });
 
-  
-  const [initialLoad, setInitialLoaded] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-
 
   const openPopup = (projectIndex) => {
     setSelectedProject(projectIndex);
@@ -107,25 +107,9 @@ const ProjectSection = () => {
     },
   };
 
-    const sectionVariants = {
-      initial: {
-        y: 50,
-        opacity: 0,
-      },
-      animate: {
-        y: 0,
-        opacity: 1,
-      },
-    };
-
   return (
     <>
-      <motion.section ref={ref} id="projects" className=""
-      variants = {sectionVariants}
-      initial = {"initial"}
-      animate = { initialLoad ? "animate": "initial"}
-      transition={{ duration: 0.5 }}
-      >
+      <section ref={ref} id="projects" className="">
         <h2 className="text-center text-5xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
@@ -137,7 +121,6 @@ const ProjectSection = () => {
               initial="initial"
               animate={isInView ? "animate" : "initial"}
               transition={{ duration: 0.8, delay: index * 0.5 }}
-              onAnimationEnd={() => setRef(true)}
             >
               <ProjectCard
                 key={project.id}
@@ -153,7 +136,7 @@ const ProjectSection = () => {
             </motion.li>
           ))}
         </motion.ul>
-      </motion.section>
+      </section>
 
       {selectedProject !== null && (
         <ProjectPopup
