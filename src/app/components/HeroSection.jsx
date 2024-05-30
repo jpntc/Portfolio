@@ -8,7 +8,7 @@ import HeroAnimation from "./HeroAnimation";
 const HeroSection = () => {
   return (
     <>
-      <section className="py-8 md:py-14">
+      <section className="py-8 md:py-14 xl:mt-16">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -44,11 +44,10 @@ const HeroSection = () => {
                   1500,
                 ]}
                 wrapper="span"
-                speed={80}
+                speed={40}
                 repeat={Infinity}
               />
             </h1>
-         
           </motion.div>
 
           <motion.div
@@ -73,9 +72,8 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
         </motion.div>
+        <HeroAnimation />
       </section>
-
-      <HeroAnimation />
     </>
   );
 };

@@ -3,7 +3,7 @@ import React, { useTransition, useState, useRef } from "react";
 import Image from "next/image";
 import { TabButton } from "./TabButton";
 import { motion, useInView } from "framer-motion";
-
+import SkillAnimation from "./SkillAnimation";
 const Tab_Data = [
   {
     title: "Skills",
@@ -53,7 +53,7 @@ const AboutSection = () => {
         className="text-text-light flex "
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1.0 }}
       >
         <motion.div
           initial={{ opacity: 0 }}

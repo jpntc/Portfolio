@@ -1,85 +1,32 @@
 import { React, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import "./DottedBG.css";
+import dynamic from "next/dynamic";
 
-const TechOrbs = [
-  {
-    path: "/images/tech-stack-images/py.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4",
-    alt: "Python logo",
-  },
-  {
-    path: "/images/tech-stack-images/js.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4",
-    alt: "JavaScript logo",
-  },
-  {
-    path: "/images/tech-stack-images/ts.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white  p-6  overflow-hidden ",
-    alt: "TypeScript logo",
-  },
-  {
-    path: "/images/tech-stack-images/jv.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "Java logo",
-  },
-  {
-    path: "/images/tech-stack-images/cpp.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "C++ logo",
-  },
-  {
-    path: "/images/tech-stack-images/psql.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "C++ logo",
-  },
+const AnimatedNumbers= dynamic(
+  () =>{
+    return import ("react-animated-numbers");
+  },{ssr: false}
+)
 
-  {
-    path: "/images/tech-stack-images/figma.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "figma logo",
-  },
 
+const AchievementsList = [
   {
-    path: "/images/tech-stack-images/git.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "git logo",
-  },
-  {
-    path: "/images/tech-stack-images/prisma.png",
-    width: 100,
-    height: 100,
-    styles:
-      "flex rounded-full  w-20 h-20 md:w-28 md:h-28 bg-gradient-to-r  from-cyan-800 to-white p-4 ",
-    alt: "prisma logo",
-  },
+    metric: "Projects",
+    value: "8"
+  },{
+    metric: "Certificaties",
+    value: "2"
+  },{
+    metric: "Hackathons",
+    value: "2",
+    wins: ""
+  },{
+    metric: "LeetCode",
+    value: "20"
+  }
 ];
-const TechOrbsVariants = {
+const Variants = {
   initial: {
     opacity: 0,
   },
@@ -87,42 +34,66 @@ const TechOrbsVariants = {
     opacity: 1,
   },
 };
+
+
 const HeroAnimation = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
   return (
     <>
-      <div className="p-3">
-        <ul className="grid grid-cols-4 md:grid-cols-6 gap-4 ">
-          {TechOrbs.map((orb, index) => (
-            <motion.li
-              key={index}
-              
-            >
-              <motion.div
-                style={{ WebkitUserSelect: "none" }}
-                initial={"initial"}
-                variants={TechOrbsVariants}
-                animate={"animate"}
-                transition={{ duration: 0.3, delay: index * 0.4 }}
+      <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <motion.div
+          className="py-8 px-4 xl:gap-16 sm:py-16 flex flex-col sm:flex-row items-center justify between"
+          initial={"initial"}
+          variants={Variants}
+          animate={"animate"}
+          transition={{ duration: 0.7, delay:  0.8 }}
+        >
+          {AchievementsList.map((achievement, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
               >
-                <motion.div className="orb-container" >
-                <motion.div className={`${orb.styles} `}whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}>
-                  <Image
-                    src={orb.path}
-                    alt={orb.alt}
-                    width={orb.width}
-                    height={orb.height}
-                    className="pointer-events-none select-none"
+                <motion.h2
+                  className="text-text-dark font-bold  text-4xl"
+                  initial={"initial"}
+                  variants={Variants}
+                  animate={"animate"}
+                  transition={{ duration: 0.8, delay: index * 0.8 }}
+                  
+                >
+                  {achievement.metric}
+                </motion.h2>
+                <motion.p
+                  initial={"initial"}
+                  variants={Variants}
+                  animate={"animate"}
+                  transition={{ duration: 0.8, delay: index * 0.8 }}
+                  className="text-text-light font-semibold text-xl xl:text-2xl"
+                >
+                  <AnimatedNumbers
+                    includeComma
+                    transitions={() => ({
+                      type: "spring",
+                      duration: 1.9,
+                      delay: index  * 0.8,
+                    })}
+                    animateToNumber={parseInt(achievement.value)}
+                    locale="en-US"
+                    className=""
+                    config={(_) => {
+                      return {
+                        mass: 1,
+                        friction: 100,
+                        tension: 100 * (index + 1),
+                      };
+                    }}
                   />
-                  </motion.div>
-              </motion.div>
-           
-              </motion.div>
-            </motion.li>
-          ))}
-        </ul>
+                </motion.p>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </>
   );
