@@ -49,7 +49,7 @@ const EmailSection = () => {
         className="grid md:grid-cols-2 my-12 md:my-8 py-24 gap-4 "
       >
         <div className="">
-          <h5 className=" text-5xl xl:text-6xl  text-text-dark  font-bold mb-8">
+          <h5 className=" text-4xl md:text-5xl xl:text-6xl  text-text-dark  font-bold mb-8">
             {" "}
             Connect with me
           </h5>

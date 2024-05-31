@@ -19,8 +19,8 @@ const ProjectCard = ({ imgUrl, title, description, onClick, styles}) => {
           />
         </div>
       </div>
-      <div className="min-h-52 md:min-h-60 flex flex-col rounded-b-xl bg-slate-700 py-6 px-4 flex-grow">
-        <h5 className="text-slate-100 text-xl xl:text-2xl font-bold mb-2">
+      <div className="min-h-56 md:min-h-60 flex flex-col rounded-b-xl bg-slate-700 py-6 px-4">
+        <h5 className="text-slate-100 text-xl xl:text-2xl font-bold mb-2 flex-grow ">
           {title}
         </h5>
         <p className="text-white flex-grow">{description}</p>

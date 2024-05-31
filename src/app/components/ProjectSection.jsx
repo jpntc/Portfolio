@@ -39,7 +39,7 @@ const projectsData = [
     image: "/images/projects/portfolio.png",
     gitUrl: "https://github.com/jpntc/Portfolio",
     tag: ["All", "Web"],
-    demo: "https://www.youtube.com/embed/8Pfa8kPjUio?si=j3-So7pXofYVCK9s",
+    demo: "",
     styles: {
       backgroundSize: "cover",
     },
@@ -101,10 +101,10 @@ const ProjectSection = () => {
   return (
     <>
       <section ref={ref} id="projects" className="">
-        <h2 className="text-center text-5xl font-bold text-text-dark mt-8 mb-8">
+        <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
-        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
           {projectsData.map((project, index) => (
             <motion.li
               key={index}
