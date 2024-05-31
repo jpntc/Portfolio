@@ -2,7 +2,7 @@
 import ProjectCard from "./ProjectCard";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ProjectPopup from "../components/ProjectPopup";
+import ProjectPopUp from "../components/ProjectPopUp";
 
 const projectsData = [
   {
@@ -130,7 +130,7 @@ const ProjectSection = () => {
       </section>
 
       {selectedProject !== null && (
-        <ProjectPopup
+        <ProjectPopUp
           project={projectsData[selectedProject]}
           onClose={closePopup}
         />

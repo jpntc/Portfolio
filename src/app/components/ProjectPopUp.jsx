@@ -2,7 +2,7 @@
 import React from "react";
 import VideoComponent from "./VideoComponent";
 
-const ProjectPopup = ({ project, onClose }) => {
+const ProjectPopUp = ({ project, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 ">
       <div className="bg-white p-8 m-16 border-green-300 rounded-lg  w-3/4 md:w-1/2 relative">
@@ -38,4 +38,4 @@ const ProjectPopup = ({ project, onClose }) => {
   );
 };
 
-export default ProjectPopup;
+export default ProjectPopUp;
