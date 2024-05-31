@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import NavLink from "../components/NavLink";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -59,7 +58,7 @@ const Navbar = () => {
         <div className=" w-20  md:w-28 lg:w-32">
           <Link href={"/"}>
             <Image
-              src="/images/logo2.jpg"
+              src="/images/logo4.png"
               alt="NT Enhanced"
               quality={100}
               width={100}

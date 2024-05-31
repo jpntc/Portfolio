@@ -1,5 +1,4 @@
 import { React, useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 
@@ -64,7 +63,7 @@ const HeroAnimation = () => {
                 >
                   {achievement.metric}
                 </motion.h2>
-                <motion.p
+                <motion.div
                   initial={"initial"}
                   variants={Variants}
                   animate={"animate"}
@@ -89,7 +88,7 @@ const HeroAnimation = () => {
                       };
                     }}
                   />
-                </motion.p>
+                </motion.div>
               </div>
             );
           })}

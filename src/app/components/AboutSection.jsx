@@ -3,7 +3,7 @@ import React, { useTransition, useState, useRef } from "react";
 import Image from "next/image";
 import { TabButton } from "./TabButton";
 import { motion, useInView } from "framer-motion";
-import SkillAnimation from "./SkillAnimation";
+
 const Tab_Data = [
   {
     title: "Skills",
