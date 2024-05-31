@@ -2,7 +2,7 @@
 import ProjectCard from "./ProjectCard";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ProjectPopup from "./ProjectPopup";
+import ProjectPopup from "../components/ProjectPopup";
 
 const projectsData = [
   {
