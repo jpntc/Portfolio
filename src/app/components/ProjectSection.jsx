@@ -39,7 +39,7 @@ const projectsData = [
     image: "/images/projects/portfolio.png",
     gitUrl: "https://github.com/jpntc/Portfolio",
     tag: ["All", "Web"],
-    demo: "",
+    demo: "https://www.youtube.com/embed/8Pfa8kPjUio?si=j3-So7pXofYVCK9s",
     styles: {
       backgroundSize: "cover",
     },

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="md:text-xl text-quaternary-dark flex flex-col justify-center ">
         <span className="container p-4 flex  justify-evenly items-center w-80 ">
           <Image
-            src="/images/logo2.jpg"
+            src="/images/logo4.png"
             alt="hero image ab"
             width={50}
             height={50}
