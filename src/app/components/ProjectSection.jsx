@@ -98,6 +98,17 @@ const ProjectSection = () => {
     },
   };
 
+      const sectionVariants = {
+        initial: {
+          y: 50,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+        },
+      };
+
   return (
     <>
       <section ref={ref} id="projects" className="">
