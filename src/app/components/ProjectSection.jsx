@@ -1,6 +1,6 @@
 "use client";
 import ProjectCard from "./ProjectCard";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import ProjectPopUp from "../components/ProjectPopUp";
 
@@ -78,6 +78,7 @@ const ProjectSection = () => {
   const isInView = useInView(ref, { once: true });
   const view = useInView(ref, { once: false });
   const [initialLoad, setInitiallyLoaded] = useState(false);
+  const [animationCount, setAnimationCount] = useState(0);
 
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -88,6 +89,12 @@ const ProjectSection = () => {
   const closePopup = () => {
     setSelectedProject(null);
   };
+
+  useEffect(() => {
+    if (animationCount === projectsData.length) {
+      setInitiallyLoaded(true);
+    }
+  }, [animationCount]);
 
   const cardVariants = {
     initial: {
@@ -119,7 +126,7 @@ const ProjectSection = () => {
         className=""
         variants={sectionVariants}
         initial="initial"
-        animate= { view ? (initialLoad ? "animate" : {opacity: 1})  : "initial"} /* I am trying to use another ref function view and a state prop initialLoad to try to get the section to load as a whole after the initial load that the UL does with the projectsData list.*/
+        animate={view ? (initialLoad ? "animate" : { opacity: 1 }) : "initial"}
         transition={{ duration: 1.0 }}
       >
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
@@ -131,9 +138,11 @@ const ProjectSection = () => {
               key={index}
               variants={cardVariants}
               initial="initial"
-              animate={isInView?  "animate" : {opacity: 1}}
+              animate={isInView ? "animate" : { opacity: 1 }}
               transition={{ duration: 1.0, delay: index * 0.5 }}
-              onAnimationEnd={() => setInitiallyLoaded(true)}
+              onAnimationComplete={() =>
+                setAnimationCount((count) => count + 1)
+              }
             >
               <ProjectCard
                 key={project.id}
