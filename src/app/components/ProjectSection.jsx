@@ -76,7 +76,7 @@ const projectsData = [
 const ProjectSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const view = useInView(ref , {once: false})
+  const view = useInView(ref, { once: false });
   const [initialLoad, setInitiallyLoaded] = useState(false);
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -88,8 +88,6 @@ const ProjectSection = () => {
   const closePopup = () => {
     setSelectedProject(null);
   };
-
-
 
   const cardVariants = {
     initial: {
@@ -110,17 +108,19 @@ const ProjectSection = () => {
     animate: {
       y: 0,
       opacity: 1,
-
     },
   };
 
   return (
     <>
-      <motion.section ref={ref} id="projects" className=""
-      variants={sectionVariants}
-      initial="initial"
-      animate={initialLoad || isInView  ? "animate" : "initial"}
-      transition={{ duration: 1.0 }}
+      <motion.section
+        ref={ref}
+        id="projects"
+        className=""
+        variants={sectionVariants}
+        initial="initial"
+        animate={initialLoad || isInView ? "animate" : "initial"}
+        transition={{ duration: 1.0 }}
       >
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
           Projects
@@ -133,7 +133,7 @@ const ProjectSection = () => {
               initial="initial"
               animate={isInView && !initialLoad ? "animate" : "initial"}
               transition={{ duration: 1.0, delay: index * 0.5 }}
-             onAnimationEnd={() => setInitiallyLoaded(true)}
+              onAnimationEnd={() => setInitiallyLoaded(true)}
             >
               <ProjectCard
                 key={project.id}
