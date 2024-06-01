@@ -119,7 +119,7 @@ const ProjectSection = () => {
         className=""
         variants={sectionVariants}
         initial="initial"
-        animate= { view ? (initialLoad ? "animate" : {opacity: 1})  : "initial"}
+        animate= { view ? (initialLoad ? "animate" : {opacity: 1})  : "initial"} /* I am trying to use another ref function view and a state prop initialLoad to try to get the section to load as a whole after the initial load that the UL does with the projectsData list.*/
         transition={{ duration: 1.0 }}
       >
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
