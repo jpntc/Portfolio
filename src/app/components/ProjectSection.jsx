@@ -75,7 +75,9 @@ const projectsData = [
 
 const ProjectSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
+  const view = useInView(ref , {once: false})
+  const [initialLoad, setInitiallyLoaded] = useState(false);
 
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -86,6 +88,8 @@ const ProjectSection = () => {
   const closePopup = () => {
     setSelectedProject(null);
   };
+
+
 
   const cardVariants = {
     initial: {
@@ -98,20 +102,26 @@ const ProjectSection = () => {
     },
   };
 
-      const sectionVariants = {
-        initial: {
-          y: 50,
-          opacity: 0,
-        },
-        animate: {
-          y: 0,
-          opacity: 1,
-        },
-      };
+  const sectionVariants = {
+    initial: {
+      y: 100,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+
+    },
+  };
 
   return (
     <>
-      <section ref={ref} id="projects" className="">
+      <motion.section ref={ref} id="projects" className=""
+      variants={sectionVariants}
+      initial="initial"
+      animate={initialLoad || isInView  ? "animate" : "initial"}
+      transition={{ duration: 1.0 }}
+      >
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
@@ -121,8 +131,9 @@ const ProjectSection = () => {
               key={index}
               variants={cardVariants}
               initial="initial"
-              animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.8, delay: index * 0.5 }}
+              animate={isInView && !initialLoad ? "animate" : "initial"}
+              transition={{ duration: 1.0, delay: index * 0.5 }}
+             onAnimationEnd={() => setInitiallyLoaded(true)}
             >
               <ProjectCard
                 key={project.id}
@@ -138,7 +149,7 @@ const ProjectSection = () => {
             </motion.li>
           ))}
         </motion.ul>
-      </section>
+      </motion.section>
 
       {selectedProject !== null && (
         <ProjectPopUp
