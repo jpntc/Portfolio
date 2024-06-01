@@ -119,7 +119,7 @@ const ProjectSection = () => {
         className=""
         variants={sectionVariants}
         initial="initial"
-        animate={initialLoad && view ? "animate" : "initial"}
+        animate= { view ? (initialLoad ? "animate" : {opacity: 1})  : "initial"}
         transition={{ duration: 1.0 }}
       >
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
@@ -131,10 +131,9 @@ const ProjectSection = () => {
               key={index}
               variants={cardVariants}
               initial="initial"
-              animate={isInView && !initialLoad ? "animate" : "initial"}
+              animate={isInView?  "animate" : {opacity: 1}}
               transition={{ duration: 1.0, delay: index * 0.5 }}
-              onAnimationComplete={() => setInitiallyLoaded(true)}
-              
+              onAnimationEnd={() => setInitiallyLoaded(true)}
             >
               <ProjectCard
                 key={project.id}

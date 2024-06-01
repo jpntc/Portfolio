@@ -45,7 +45,7 @@ const EmailSection = () => {
         ref={ref}
         initial={{ opacity: 0}}
         animate={isInView ? { opacity: 1, x: 0 } :{opacity: 0, x: -150}}
-        transition={{ duration: 1.0 }}
+        transition={{ duration: 1.3 }}
         className="grid md:grid-cols-2 my-12 md:my-8 py-24 gap-4 "
       >
         <div className="">
