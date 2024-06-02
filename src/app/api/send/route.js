@@ -1,8 +1,8 @@
 import {Resend} from 'resend';
 import {NextResponse} from 'next/server';
 
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+const API_KEY = process.env.RESEND_API_KEY;
+const resend = new Resend(API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 const MY_GMAIL = process.env.MY_GMAIL;
 
