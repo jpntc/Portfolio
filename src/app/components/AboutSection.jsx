@@ -76,8 +76,8 @@ const AboutSection = () => {
               About Me
             </h2>
             <p className="text-base md:text-xl xl:text-2xl ">
-              A student who is passionate about software engineering, loves
-              problem solving, and learning new technologies. Open to
+              A student who is passionate about technology and software engineering, loves
+              problem solving, and adept at learning technical skills. Open to
               working on projects outside expertise.
             </p>
             <div className="flex flex-row mt-8 justify-start ">
