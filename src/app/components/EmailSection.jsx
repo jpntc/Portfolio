@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [gotRequest, setGotRequest] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const handleSubmit = async (e) => {
@@ -37,13 +38,36 @@ const EmailSection = () => {
       console.log("Message not sent");
     }
   };
+
+  const processRequest = async () =>{
+    const endpoint = "/api/hello"
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+
+    try{
+    const response = await fetch (endpoint, options);
+    let data;
+    if (response.status === 200){  
+      setGotRequest(true);
+      data = await response.json();
+      console.log("success");
+    }
+  }catch(error){
+    console.log("Error in the API REQUEST FROM COMPONENT", error);
+  }
+  }
+
   return (
     <>
       <motion.section
         id="contact"
         ref={ref}
-        initial={{ opacity: 0}}
-        animate={isInView ? { opacity: 1, x: 0 } :{opacity: 0, x: -150}}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
         transition={{ duration: 1.3 }}
         className="grid md:grid-cols-2 my-12 md:my-8 py-24 gap-4 "
       >
@@ -148,8 +172,18 @@ const EmailSection = () => {
             {emailSubmitted && (
               <p className="text-green-500 text-lg mt-2">Sent successfully!</p>
             )}
+            {gotRequest && <h2>THE API WORKS</h2>}
           </form>
         </div>
+        <motion.button
+          type="submit"
+          className="text-text-light text-xl px-6 py-3 hover:bg-slate-100 hover:text-black rounded-full mt-3 w-full sm:w-fit bg-text-dark "
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick = {processRequest}
+        >
+          API WORKS
+        </motion.button>
       </motion.section>
     </>
   );
