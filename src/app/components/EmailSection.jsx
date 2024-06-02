@@ -1,11 +1,12 @@
 "use client";
-import { React, useState, useRef  } from "react";
+import { React, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [gotRequest, setGotRequest] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const handleSubmit = async (e) => {
@@ -16,9 +17,9 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "./api/send";
+    const endpoint = "/api/send";
 
-    const options = {
+     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,10 +27,6 @@ const EmailSection = () => {
       body: JSONdata,
     };
     const response = await fetch(endpoint, options);
-
-    const resData = await response.json();
-    console.log(resData);
-    console.log(response);
     if (response.status === 200) {
       setEmailSubmitted(true);
     } else {
@@ -37,14 +34,13 @@ const EmailSection = () => {
       console.log("Message not sent");
     }
   };
-
   return (
     <>
       <motion.section
         id="contact"
         ref={ref}
-        initial={{ opacity: 0}}
-        animate={isInView ? { opacity: 1, x: 0 } :{opacity: 0, x: -150}}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
         transition={{ duration: 1.3 }}
         className="grid md:grid-cols-2 my-12 md:my-8 py-24 gap-4 "
       >
@@ -151,6 +147,7 @@ const EmailSection = () => {
             )}
           </form>
         </div>
+       
       </motion.section>
     </>
   );

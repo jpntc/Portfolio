@@ -6,8 +6,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 const MY_GMAIL = process.env.MY_GMAIL;
 
-export async function POST(req, res) {
-  const body =  await req.json();
+export async function POST(req,res) {
+  const body =  req;
 
   const {email, subject, message} = body;
   try {
@@ -23,7 +23,6 @@ export async function POST(req, res) {
         <p>Thank you for your inquiry!</p>
         </>)
     });
-    console.log(data);
     return  NextResponse.json(data);
   } catch (error) {
     console.error('Error sending email:', error);
