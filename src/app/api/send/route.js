@@ -1,11 +1,10 @@
 import {Resend} from 'resend';
-import { defineAuth, secret } from "@aws-amplify/backend";
 import {NextResponse} from 'next/server';
 
-const API_KEY = secret('RESEND_API_KEY');
+const API_KEY = process.env.RESEND_API_KEY;
 const resend = new Resend(API_KEY);
-const fromEmail = secret('FROM_EMAIL');
-const MY_GMAIL = secret('MY_GMAIL');
+const fromEmail = process.env.FROM_EMAIL;
+const MY_GMAIL = process.env.MY_GMAIL;
 
 export async function POST(req,res) {
   const body =  req;
