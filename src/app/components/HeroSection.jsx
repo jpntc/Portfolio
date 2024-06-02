@@ -19,9 +19,9 @@ const HeroSection = () => {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="col-span-8 place-self-center text-center sm:text-left justify-self-start mt-3 mb-3"
+            className="h-32 w-full md:h-auto md:w-auto  col-span-8 place-self-center text-center sm:text-left justify-self-start mt-3 mb-3 "
           >
-            <h1 className="mb-4 text-5xl xl:text-7xl lg:leading-normal font-extrabold md:text-nowrap">
+            <h1 className="mb-4 text-5xl xl:text-7xl lg:leading-normal font-extrabold md:text-nowrap ">
               <motion.span
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -67,7 +67,7 @@ const HeroSection = () => {
                 alt="hero image"
                 width={300}
                 height={300}
-                className="overflow-hidden"
+                className=""
               />
             </motion.div>
           </motion.div>

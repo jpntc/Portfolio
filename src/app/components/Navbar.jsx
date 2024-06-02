@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import NavLink from "../components/NavLink";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -54,12 +53,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#78b2b8] bg-opacity-100 border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#78b2b8] bg-opacity-100 border-b border-text-dark">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4  container  py-2 ">
         <div className=" w-20  md:w-28 lg:w-32">
           <Link href={"/"}>
             <Image
-              src="/images/logo2.jpg"
+              src="/images/logo4.png"
               alt="NT Enhanced"
               quality={100}
               width={100}
@@ -73,7 +72,7 @@ const Navbar = () => {
         <div className="mobile-menu block md:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className=" flex items-center px-3 py-2 border rounded border-text-dark hover:text-primary-light hover:border-primary-light"
+            className=" flex items-center px-3 py-2 border rounded border-text-dark hover:text-slate-100 hover:border-slate-100"
           >
             {navbarOpen ? (
               <XMarkIcon className="h-5 w-5" />

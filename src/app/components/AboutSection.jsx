@@ -3,7 +3,7 @@ import React, { useTransition, useState, useRef } from "react";
 import Image from "next/image";
 import { TabButton } from "./TabButton";
 import { motion, useInView } from "framer-motion";
-import SkillAnimation from "./SkillAnimation";
+
 const Tab_Data = [
   {
     title: "Skills",
@@ -50,7 +50,7 @@ const AboutSection = () => {
       <motion.section
         id="about"
         ref={ref}
-        className="text-text-light flex "
+        className="text-text-light flex"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
         transition={{ duration: 1.0 }}
@@ -59,7 +59,7 @@ const AboutSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.1 }}
-          className="md:grid md:grid-cols-2 gap-8 item-center content-center  py-8 px-4 xl:gap-16 sm:py-16 md:px-10 md:mt-20 mb-2"
+          className="md:grid md:grid-cols-2 gap-8 item-center content-center  py-8 px-4 xl:gap-16 sm:py-16  md:mt-20 mb-2"
         >
           <div className="">
             <Image
@@ -76,8 +76,8 @@ const AboutSection = () => {
               About Me
             </h2>
             <p className="text-base md:text-xl xl:text-2xl ">
-              A student who is passionate about software engineering, loves
-              problem solving, and learning new technologies. Open to
+              A student who is passionate about technology and software engineering, loves
+              problem solving, and adept at learning technical skills. Open to
               working on projects outside expertise.
             </p>
             <div className="flex flex-row mt-8 justify-start ">

@@ -16,7 +16,7 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const endpoint = "./api/send";
 
     const options = {
       method: "POST",
@@ -40,15 +40,15 @@ const EmailSection = () => {
   return (
     <>
       <motion.section
-        ref={ref}
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 150 }}
-        transition={{ duration: 1.0 }}
         id="contact"
+        ref={ref}
+        initial={{ opacity: 0}}
+        animate={isInView ? { opacity: 1, x: 0 } :{opacity: 0, x: -150}}
+        transition={{ duration: 1.3 }}
         className="grid md:grid-cols-2 my-12 md:my-8 py-24 gap-4 "
       >
         <div className="">
-          <h5 className=" text-5xl xl:text-6xl  text-text-dark  font-bold mb-8">
+          <h5 className=" text-4xl md:text-5xl xl:text-6xl  text-text-dark  font-bold mb-8">
             {" "}
             Connect with me
           </h5>
