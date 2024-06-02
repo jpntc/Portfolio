@@ -27,6 +27,9 @@ const EmailSection = () => {
       body: JSONdata,
     };
     const response = await fetch(endpoint, options);
+    console.log(response);
+    console.log(response.status);
+    console.log(response.body);
     if (response.status === 200) {
       setEmailSubmitted(true);
     } else {
@@ -105,7 +108,7 @@ const EmailSection = () => {
             </div>
             <div className="mb-6">
               <label
-                htmlFor="Subject"
+                htmlFor="subject"
                 className="   text-text-dark font-semibold block mb-2 text-xl xl:text-2xl"
               >
                 Subject
@@ -121,7 +124,7 @@ const EmailSection = () => {
             </div>
             <div className="mb-6">
               <label
-                htmlFor="Message"
+                htmlFor="message"
                 className="  text-text-dark font-semibold block mb-2 text-xl xl:text-2xl"
               >
                 Message
