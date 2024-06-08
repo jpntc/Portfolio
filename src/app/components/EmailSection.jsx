@@ -18,8 +18,14 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
+<<<<<<< HEAD
     const endpoint = "/api";
     const options = {
+=======
+    const endpoint = process.env.NEXT_PUBLIC_SEND_API_ENDPOINT;
+
+     const options = {
+>>>>>>> 33ec2e94d51196cdfa01f1f4086cddcea7282125
       method: "POST",
       headers: {
         "Content-Type": "application/json",
