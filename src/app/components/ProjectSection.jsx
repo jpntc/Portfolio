@@ -132,17 +132,10 @@ const ProjectSection = () => {
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
-        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
           {projectsData.map((project, index) => (
-            <motion.li
+            <li
               key={index}
-              variants={cardVariants}
-              initial="initial"
-              animate={isInView ? "animate" : { opacity: 1 }}
-              transition={{ duration: 1.0, delay: index * 0.5 }}
-              onAnimationComplete={() =>
-                setAnimationCount((count) => count + 1)
-              }
             >
               <ProjectCard
                 key={project.id}
@@ -155,9 +148,9 @@ const ProjectSection = () => {
                 className="cursor-pointer"
                 styles={project.styles}
               />
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
       </motion.section>
 
       {selectedProject !== null && (
