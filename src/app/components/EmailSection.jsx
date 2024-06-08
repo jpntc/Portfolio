@@ -152,7 +152,7 @@ const EmailSection = () => {
               Send
             </motion.button>
             {emailSubmitted && (
-              <p className="text-green-500 text-lg mt-2">Sent successfully!</p>
+              <p className="text-text-light text-lg mt-2">Sent successfully!</p>
             )}
           </form>
         </div>
