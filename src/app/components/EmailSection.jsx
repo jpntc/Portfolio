@@ -45,7 +45,7 @@ const EmailSection = () => {
     }
   };
   const handleGet = async () => {
-    const endpoint = process.env.NEXT_PUBLIC_GET_API_ENDPOINT;
+    const endpoint = "/api/greetings";
     let response;
     const options = {
       method: "GET",
