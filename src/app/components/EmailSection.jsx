@@ -3,10 +3,11 @@ import { React, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import { on } from "events";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [gotRequest, setGotRequest] = useState(false);
+  const [gotRequest, setGotRequest] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const handleSubmit = async (e) => {
@@ -17,24 +18,50 @@ const EmailSection = () => {
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-     const options = {
+    const endpoint = "/api";
+    const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSONdata,
     };
-    const response = await fetch(endpoint, options);
-    console.log(response);
-    console.log(response.status);
-    console.log(response.body);
-    if (response.status === 200) {
-      setEmailSubmitted(true);
-    } else {
-      console.log(response.status);
-      console.log("Message not sent");
+    try {
+      const response = await fetch(endpoint, options);
+      if (response) {
+        console.log(response);
+        console.log(response.status);
+        if (response.status === 200) {
+          setEmailSubmitted(true);
+        } else {
+          console.log(response.status);
+          console.log("Message not sent");
+        }
+      } else {
+        console.log("No response received")
+      }
+    } catch (error) {
+      console.log("Error fetching the endpoint", error);
+    }
+  };
+  const handleGet = async () => {
+    const endpoint = process.env.NEXT_PUBLIC_GET_API_ENDPOINT;
+    let response;
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      response = await fetch(endpoint, options);
+      let data = await response.json();
+      if (data) {
+        console.log(data);
+        setGotRequest(data);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -149,8 +176,17 @@ const EmailSection = () => {
               <p className="text-green-500 text-lg mt-2">Sent successfully!</p>
             )}
           </form>
+          <motion.button
+            type="submit"
+            className="text-text-light text-xl px-6 py-3 hover:bg-slate-100 hover:text-black rounded-full mt-3 w-full sm:w-fit bg-text-dark "
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleGet}
+          >
+            GET GREETING
+          </motion.button>
+          {gotRequest && <div>{gotRequest.message}</div>}
         </div>
-       
       </motion.section>
     </>
   );
