@@ -9,7 +9,7 @@ const initializeResend = async () => {
   if (!API_KEY || !from_email || !my_gmail) {
     throw new Error("Missing required environment variables");
   }
-
+  console.log("API_KEY:", API_KEY, "from_email:", from_email, "my_gmail:", my_gmail);
   const resend = new Resend(API_KEY);
   return [resend, from_email, my_gmail];
 };
