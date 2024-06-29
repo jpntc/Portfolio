@@ -12,17 +12,17 @@ const AnimatedNumbers= dynamic(
 const AchievementsList = [
   {
     metric: "Projects",
-    value: "6"
+    value: "7"
   },{
-    metric: "Certificaties",
+    metric: "Certifications",
     value: "2"
   },{
     metric: "Hackathons",
-    value: "4",
+    value: "6",
     wins: ""
   },{
-    metric: "LeetCode",
-    value: "20"
+    metric: "Technologies",
+    value: "10"
   }
 ];
 const Variants = {
