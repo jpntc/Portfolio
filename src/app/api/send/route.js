@@ -2,21 +2,23 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const initializeResend = async () => {
-  const API_KEY = process.env.production.RESEND_API_KEY;
-  const from_email = process.env.production.FROM_EMAIL;
-  const my_gmail = process.env.production.MY_GMAIL;
+  const API_KEY = process.env.RESEND_API_KEY;
+  const from_email = process.env.FROM_EMAIL;
+  const my_gmail = process.env.MY_GMAIL;
 
   if (!API_KEY || !from_email || !my_gmail) {
-    throw new Error("Missing required environment variables", API_KEY, from_email, my_gmail);
+    throw new Error("Missing required environment variables");
   }
-  return [API_KEY, from_email, my_gmail];
+  console.log("API_KEY:", API_KEY, "from_email:", from_email, "my_gmail:", my_gmail);
+  const resend = new Resend(API_KEY);
+  return [resend, from_email, my_gmail];
 };
 
 export async function POST(req, res) {
   try {
-    const [API_KEY, from_email, my_gmail] = await initializeResend();
-     
-    const resend = new Resend(API_KEY);
+    const [resend, from_email, my_gmail] = await initializeResend();
+    console.log("Resend initialized with:", resend, from_email, my_gmail);
+
     const body = await req.json();
 
     if (body) {
@@ -31,8 +33,7 @@ export async function POST(req, res) {
           react: (
             <>
               <h1>{subject}</h1>
-              <h2>{message}</h2>
-              <b></b>
+              <p>{message}</p>
               <p>Message submitted</p>
               <p>Thank you for your inquiry!</p>
             </>
