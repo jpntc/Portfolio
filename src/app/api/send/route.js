@@ -7,18 +7,16 @@ const initializeResend = async () => {
   const my_gmail = process.env.MY_GMAIL;
 
   if (!API_KEY || !from_email || !my_gmail) {
-    throw new Error("Missing required environment variables");
+    throw new Error("Missing required environment variables", API_KEY = 10, from_email = 10, my_gmail = 10);
   }
-  console.log("API_KEY:", API_KEY, "from_email:", from_email, "my_gmail:", my_gmail);
-  const resend = new Resend(API_KEY);
-  return [resend, from_email, my_gmail];
+  return [API_KEY, from_email, my_gmail];
 };
 
 export async function POST(req, res) {
   try {
-    const [resend, from_email, my_gmail] = await initializeResend();
-    console.log("Resend initialized with:", resend, from_email, my_gmail);
-
+    const [API_KEY, from_email, my_gmail] = await initializeResend();
+     
+    const resend = new Resend(API_KEY);
     const body = await req.json();
 
     if (body) {
@@ -33,7 +31,8 @@ export async function POST(req, res) {
           react: (
             <>
               <h1>{subject}</h1>
-              <p>{message}</p>
+              <h2>{message}</h2>
+              <b></b>
               <p>Message submitted</p>
               <p>Thank you for your inquiry!</p>
             </>
