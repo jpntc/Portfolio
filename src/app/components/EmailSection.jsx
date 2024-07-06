@@ -40,7 +40,7 @@ const EmailSection = () => {
         console.log("No response received")
       }
     } catch (error) {
-      console.log("Error fetching the endpoint", error);
+      console.log(error);
     }
   };
   return (
