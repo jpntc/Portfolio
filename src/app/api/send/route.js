@@ -2,9 +2,9 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const initializeResend = async () => {
-  const API_KEY = process.env.RESEND_API_KEY;
-  const from_email = process.env.FROM_EMAIL;
-  const my_gmail = process.env.MY_GMAIL;
+  const API_KEY = process.env.production.RESEND_API_KEY;
+  const from_email = process.env.production.FROM_EMAIL;
+  const my_gmail = process.env.production.MY_GMAIL;
 
   if (!API_KEY || !from_email || !my_gmail) {
     throw new Error("Missing required environment variables", API_KEY, from_email, my_gmail);
