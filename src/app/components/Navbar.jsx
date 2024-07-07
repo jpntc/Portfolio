@@ -58,13 +58,13 @@ const Navbar = () => {
         <div className=" w-20  md:w-28 lg:w-32">
           <Link href={"/"}>
             <Image
-              src="/images/logo4.png"
+              src="/images/logo.png"
               alt="NT Enhanced"
               quality={100}
               width={100}
               height={100}
               layout="intrinsic"
-              className={"rounded-full"}
+              className={"rounded-full "}
             />
           </Link>
         </div>

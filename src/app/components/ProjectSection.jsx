@@ -120,7 +120,7 @@ const ProjectSection = () => {
 
   return (
     <>
-      <motion.section
+      <section
         ref={ref}
         id="projects"
         className=""
@@ -133,9 +133,16 @@ const ProjectSection = () => {
           Projects
         </h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
-          {projectsData.map((project, index) => (
-            <li
+          {
+            isInView ? 
+              projectsData.map((project, index) =>(
+            <motion.li
               key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 1, delay: (index * 0.3)}}
+
             >
               <ProjectCard
                 key={project.id}
@@ -148,10 +155,11 @@ const ProjectSection = () => {
                 className="cursor-pointer"
                 styles={project.styles}
               />
-            </li>
-          ))}
+            </motion.li>
+              )) : <></>
+          }
         </ul>
-      </motion.section>
+      </section>
 
       {selectedProject !== null && (
         <ProjectPopUp
