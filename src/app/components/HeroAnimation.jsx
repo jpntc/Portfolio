@@ -39,7 +39,7 @@ const HeroAnimation = () => {
 
   return (
     <>
-      <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="py-8 xl:gap-16 sm:py-16 xl:px-16">
         <motion.div
           className="py-8 px-4 xl:gap-16 sm:py-16 flex flex-col sm:flex-row items-center justify between"
           initial={"initial"}
