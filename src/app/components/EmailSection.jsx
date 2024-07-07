@@ -8,7 +8,7 @@ import { on } from "events";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const handleSubmit = async (e) => {
     e.preventDefault();
     let data = {
