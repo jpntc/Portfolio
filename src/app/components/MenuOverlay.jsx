@@ -10,12 +10,7 @@ const MenuOverlay = ({links}) => {
                 </li>
             ))
         }
-
-
     </ul>
-
-
-
     )
 }
 

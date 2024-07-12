@@ -7,6 +7,18 @@ import ProjectPopUp from "../components/ProjectPopUp";
 const projectsData = [
   {
     id: 1,
+    title: "Connect-Tags",
+    description: "A WIP full-stack app developed with React-Native, Flask, and FireBase.",
+    detailedDescription:
+      "Connect-Tags is a group project done by myself and two other members (Casey Mak, and Mohammed Areefin). during the 2024 Wafflehacks hackathon. The project is still WIP. We used react-native to create the front-end so that we can have one simple code-base for all 3 platforms (web, apple, android). We are currently working on the backend with Flask and FireBase, and other features.",
+    image: "/images/projects/Connect-Tags.jpeg",
+    gitUrl: "https://github.com/jpntc/wafflehacks-2024-Connect-Tags",
+    tag: ["All", "Web"],
+    demo: "https://www.youtube.com/embed/3ma1kaWPtUU?si=QlKLmeqpveUyY0Gc",
+    styles: { backgroundSize: "cover", width: "100%", overflow: "hidden" },
+  },
+  {
+    id: 2,
     title: "Image Generator",
     description:
       "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind.",
@@ -18,7 +30,7 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 2,
+    id: 3,
     title: "Game Hub",
     description:
       "A game browsing web app that uses RAWG's API and filters that gives power to browse hundreds of games.",
@@ -30,7 +42,7 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 3,
+    id: 4,
     title: "Portfolio",
     description:
       "A portfolio to show the track record of my journey in programming and software engineering. ",
@@ -45,7 +57,7 @@ const projectsData = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "Inventory Management System",
     description:
       "An inventory system that offers CRUD operations to simulate a real-world system used by commerce businesses.",
@@ -59,7 +71,7 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 5,
+    id: 6,
     title: "URL Parser",
     description:
       "A URL parsing program that takes in URLs that point to different web pages and extracts the information they contain.",
@@ -120,7 +132,7 @@ const ProjectSection = () => {
 
   return (
     <>
-      <motion.section
+      <section
         ref={ref}
         id="projects"
         className=""
@@ -132,17 +144,17 @@ const ProjectSection = () => {
         <h2 className="text-center text-5xl xl:text-6xl font-bold text-text-dark mt-8 mb-8">
           Projects
         </h2>
-        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
-          {projectsData.map((project, index) => (
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 px-4">
+          {
+            isInView ? 
+              projectsData.map((project, index) =>(
             <motion.li
               key={index}
               variants={cardVariants}
               initial="initial"
-              animate={isInView ? "animate" : { opacity: 1 }}
-              transition={{ duration: 1.0, delay: index * 0.5 }}
-              onAnimationComplete={() =>
-                setAnimationCount((count) => count + 1)
-              }
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 1, delay: (index * 0.3)}}
+
             >
               <ProjectCard
                 key={project.id}
@@ -156,9 +168,10 @@ const ProjectSection = () => {
                 styles={project.styles}
               />
             </motion.li>
-          ))}
-        </motion.ul>
-      </motion.section>
+              )) : <></>
+          }
+        </ul>
+      </section>
 
       {selectedProject !== null && (
         <ProjectPopUp
