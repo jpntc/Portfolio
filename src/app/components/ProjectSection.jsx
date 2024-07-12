@@ -48,7 +48,7 @@ const projectsData = [
       "A portfolio to show the track record of my journey in programming and software engineering. ",
     detailedDescription:
       "A portfolio web application developed with Next.js and Tailwind CSS to share information about myself and my journey. The project leverages the strengths of React and the component-based software engineering approach it offers which is popular in today's web development industry. I Created 6 components for the 6 different page sections, from the Navbar to the Footer and other children components for important functionalities. The libraries I used for the animations are React's Framer Motion, Type-Animation, and Animated Numbers. I attempted a dynamic code approach when necessary for generating site information, to make the codebase small and readable. RESEND was used for sending emails. AWS was used for deployment.",
-    image: "/images/projects/Portfolio.png",
+    image: "/images/projects/portfolio.png",
     gitUrl: "https://github.com/jpntc/Portfolio",
     tag: ["All", "Web"],
     demo: "",
