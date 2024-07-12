@@ -7,6 +7,18 @@ import ProjectPopUp from "../components/ProjectPopUp";
 const projectsData = [
   {
     id: 1,
+    title: "Connect-Tags",
+    description: "A WIP full-stack app developed with React-Native, Flask, and FireBase.",
+    detailedDescription:
+      "Connect-Tags is a group project done by myself and two other members (Casey Mak, and Mohammed Areefin). during the 2024 Wafflehacks hackathon. The project is still WIP. We used react-native to create the front-end so that we can have one simple code-base for all 3 platforms (web, apple, android). We are currently working on the backend with Flask and FireBase, and other features.",
+    image: "/images/projects/Connect-Tags.jpeg",
+    gitUrl: "https://github.com/jpntc/wafflehacks-2024-Connect-Tags",
+    tag: ["All", "Web"],
+    demo: "https://www.youtube.com/embed/3ma1kaWPtUU?si=QlKLmeqpveUyY0Gc",
+    styles: { backgroundSize: "cover", width: "100%", overflow: "hidden" },
+  },
+  {
+    id: 2,
     title: "Image Generator",
     description:
       "A web app that integrates the DALL-E 3 API to generate images from user input, along with interactive components to adjust the images created to match what is desired in mind.",
@@ -18,7 +30,7 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 2,
+    id: 3,
     title: "Game Hub",
     description:
       "A game browsing web app that uses RAWG's API and filters that gives power to browse hundreds of games.",
@@ -30,13 +42,13 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 3,
+    id: 4,
     title: "Portfolio",
     description:
       "A portfolio to show the track record of my journey in programming and software engineering. ",
     detailedDescription:
       "A portfolio web application developed with Next.js and Tailwind CSS to share information about myself and my journey. The project leverages the strengths of React and the component-based software engineering approach it offers which is popular in today's web development industry. I Created 6 components for the 6 different page sections, from the Navbar to the Footer and other children components for important functionalities. The libraries I used for the animations are React's Framer Motion, Type-Animation, and Animated Numbers. I attempted a dynamic code approach when necessary for generating site information, to make the codebase small and readable. RESEND was used for sending emails. AWS was used for deployment.",
-    image: "/images/projects/portfolio.png",
+    image: "/images/projects/Portfolio.png",
     gitUrl: "https://github.com/jpntc/Portfolio",
     tag: ["All", "Web"],
     demo: "",
@@ -45,7 +57,7 @@ const projectsData = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "Inventory Management System",
     description:
       "An inventory system that offers CRUD operations to simulate a real-world system used by commerce businesses.",
@@ -59,7 +71,7 @@ const projectsData = [
     styles: { backgroundSize: "cover" },
   },
   {
-    id: 5,
+    id: 6,
     title: "URL Parser",
     description:
       "A URL parsing program that takes in URLs that point to different web pages and extracts the information they contain.",

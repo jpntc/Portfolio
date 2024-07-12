@@ -5,13 +5,16 @@ const ProjectCard = ({ imgUrl, title, description, onClick, styles}) => {
   return (
     <div className="">
       <div
-        className={`h-52 relative group overflow-hidden rounded-t-xl ${styles}`}
-        style={{
-          background: `url(${imgUrl})`,
-          backgroundSize: `${styles.backgroundSize}`,
-          backgroundRepeat: "no-repeat",
-        }}
+        className={`h-52 relative group overflow-hidden rounded-t-xl`}
+        style={{...styles}}
       >
+        <div className="w-full h-full"
+          style={{
+            backgroundImage: `url(${imgUrl})`,
+            backgroundSize: `${styles.backgroundSize}`,
+            backgroundPosition: "center",
+          }}
+        />
         <div className="overlay absolute top-0 left-0 w-full h-full bg-black bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 items-center justify-center ">
           <WindowIcon
             className="h-10 w-10 text-quaternary-dark cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2  hover:text-slate-100"
